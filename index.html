@@ -8,26 +8,62 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-    h1{
-      display:inline;
+       button{
+      width:50px;
+      height:100px;
     }
-    button{
-      height:30%;
-      width: 10%;
-    margin-top:0px;
-  margin-left: 20px;
+    /* Sidebar links */
+.sidebar button {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+    .sidebar button:not(.active){
+      
+    }
+    
+    .sidebar{
+      id:"Teams"
+      margin:0;
+      width:0;
+      padding:0;
+      height:100%;
+      background-color:#fffff;
+      position: fixed;
+      overflow: auto;
+    }
+    div.content{
+      margin-left: 50px;
+        padding:16px;
+      height:80%;
     }
   </style>
   </head>
 <body>
-   <div class="container">
-  <h2>My First Bootstrap Page</h2>
-  <p>This is some text.</p>
-</div>
   <h1 >PVHS Esports Club </h1> 
- <button onClick="document.location='https://noahbenschine.github.io/pvhsesports/LoL.html'">LoL</button>
-  <button onClick="document.location='https://noahbenschine.github.io/pvhsesports/smite.html">Smite</button>
+ <div id="Teams" class = "sidebar">
+   <button onClick ="">LoL</button>
+  <button onClick="">Smite</button>
   <button onClick="">Rocket League</button>
  <button onClick="">Fornite</button>
+ </div>
+  <div class="content">
+    <button onclick="openNav()"></button>
+  </div>
+<script>
+function openNav() {
+  document.getElementById("Teams").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
 </body>
 </html>
